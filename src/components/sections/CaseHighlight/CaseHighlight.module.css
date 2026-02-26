@@ -1,7 +1,3 @@
-/* ============================================
-   CASE HIGHLIGHT STYLES
-   ============================================ */
-
 .caseHighlight {
   padding: 120px 0;
   position: relative;
@@ -16,42 +12,59 @@
   margin-top: 20px;
   font-size: clamp(1.75rem, 4vw, 2.5rem);
   color: var(--text-primary);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Cases Grid */
 .casesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-/* Case Card */
 .caseCard {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
   padding: 2rem;
-  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  animation: fadeSlideUp 0.6s ease forwards;
+  transition: border-color 0.3s ease, transform 0.3s ease;
 }
 
-/* Company Header */
+.caseCard:hover {
+  border-color: rgba(37, 99, 235, 0.3);
+  transform: translateY(-4px);
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .companyHeader {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-bottom: 24px;
+  gap: 1rem;
 }
 
 .companyIcon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-md);
   flex-shrink: 0;
 }
 
@@ -65,156 +78,138 @@
   color: var(--accent-purple);
 }
 
-.companyInfo {
-  flex: 1;
-}
-
 .companyName {
   font-family: var(--font-display);
-  font-size: 1.125rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .industry {
-  font-size: 13px;
+  font-size: 0.8rem;
   color: var(--text-muted);
+  font-family: var(--font-mono);
 }
 
-/* Solutions */
 .solutions {
-  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .solutionsLabel {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.75rem;
+  color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--text-muted);
-  margin-bottom: 10px;
 }
 
 .solutionsTags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 0.5rem;
 }
 
 .solutionTag {
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--accent-blue);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
   background: rgba(37, 99, 235, 0.1);
-  border-radius: var(--radius-full);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--accent-blue);
+  font-family: var(--font-mono);
 }
 
-/* Metrics */
 .metrics {
   display: flex;
   align-items: center;
-  gap: 24px;
-  padding: 20px;
-  background: var(--bg-card);
-  border-radius: var(--radius-md);
-  margin-bottom: 24px;
+  gap: 1.5rem;
+  padding: 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .metric {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   flex: 1;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  font-family: var(--font-display);
-  color: var(--accent-blue);
 }
 
 .metricValue {
-  display: block;
   font-family: var(--font-display);
   font-size: 2rem;
   font-weight: 800;
   line-height: 1;
-  margin-bottom: 6px;
 }
 
-.metricValue.blue {
-  color: var(--accent-blue);
-}
-
-.metricValue.purple {
-  color: var(--accent-purple);
-}
+.metricValue.blue { color: var(--accent-blue); }
+.metricValue.purple { color: var(--accent-purple); }
 
 .metricValueSecondary {
-  display: block;
   font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  font-size: 2rem;
+  font-weight: 800;
   line-height: 1;
-  margin-bottom: 6px;
+  color: #22C55E;
 }
 
 .metricLabel {
-  display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .metricDivider {
   width: 1px;
-  height: 50px;
-  background: var(--border-color);
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  flex-shrink: 0;
 }
 
-/* Quote */
 .quote {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-  background: var(--glass-surface);
-  border-radius: var(--radius-md);
+  gap: 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .quoteIcon {
   color: var(--accent-blue);
-  opacity: 0.5;
-  margin-bottom: 12px;
+  opacity: 0.6;
 }
 
 .quoteText {
-  flex: 1;
-  font-size: 14px;
-  line-height: 1.7;
-  font-style: italic;
+  font-size: 0.9rem;
+  line-height: 1.6;
   color: var(--text-secondary);
-  margin-bottom: 16px;
+  font-style: italic;
 }
 
 .quoteAuthor {
   display: flex;
-  flex-direction: column;
-  gap: 2px;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .authorName {
-  font-size: 14px;
   font-weight: 600;
+  font-size: 0.85rem;
   color: var(--text-primary);
 }
 
 .authorRole {
-  font-size: 12px;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
-/* CTA */
+.authorRole::before {
+  content: '· ';
+}
+
 .ctaWrapper {
   display: flex;
   justify-content: center;
@@ -224,29 +219,25 @@
 .ctaButton {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 16px 32px;
-  font-size: 15px;
-  font-weight: 600;
+  gap: 8px;
+  padding: 0.875rem 2rem;
+  background: var(--accent-blue);
   color: white;
-  background: var(--gradient-blue);
-  border-radius: var(--radius-full);
-  transition: all var(--transition-base);
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .ctaButton:hover {
+  opacity: 0.85;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-glow-blue);
 }
 
-/* Responsive */
 @media (max-width: 1024px) {
   .casesGrid {
     grid-template-columns: 1fr;
-  }
-  
-  .caseCard {
-    max-width: 600px;
+    max-width: 560px;
     margin: 0 auto;
   }
 }
@@ -255,18 +246,8 @@
   .caseHighlight {
     padding: 80px 0;
   }
-  
-  .metrics {
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .metricDivider {
-    width: 100%;
-    height: 1px;
-  }
-  
-  .metricValue {
-    font-size: 1.75rem;
+  .metricValue,
+  .metricValueSecondary {
+    font-size: 1.5rem;
   }
 }

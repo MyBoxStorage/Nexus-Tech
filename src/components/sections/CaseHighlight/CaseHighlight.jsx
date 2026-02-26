@@ -1,13 +1,7 @@
-import { useEffect, useRef } from 'react'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Link } from 'react-router-dom'
 import { TrendingUp, ArrowRight, Quote } from 'lucide-react'
 import SectionBadge from '../../ui/SectionBadge/SectionBadge'
-import GlassCard from '../../ui/GlassCard/GlassCard'
 import styles from './CaseHighlight.module.css'
-
-gsap.registerPlugin(ScrollTrigger)
 
 const caseStudies = [
   {
@@ -55,33 +49,9 @@ const caseStudies = [
 ]
 
 function CaseHighlight() {
-  const sectionRef = useRef(null)
-  const cardsRef = useRef(null)
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.from(cardsRef.current?.children || [], {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 95%',
-          toggleActions: 'play none none reverse'
-        },
-        y: 50,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power3.out'
-      })
-      ScrollTrigger.refresh()
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <section ref={sectionRef} className={styles.caseHighlight}>
+    <section className={styles.caseHighlight}>
       <div className="container">
-        {/* Header */}
         <div className={styles.header}>
           <SectionBadge>Casos de Sucesso</SectionBadge>
           <h2 className={styles.title}>
@@ -89,66 +59,60 @@ function CaseHighlight() {
           </h2>
         </div>
 
-        {/* Case Studies Grid */}
-        <div ref={cardsRef} className={styles.casesGrid} style={{ opacity: 1 }}>
-          {caseStudies.map((caseStudy) => (
-            <GlassCard key={caseStudy.id} hoverable padding="large">
-              <div className={styles.caseCard}>
-                {/* Company Info */}
-                <div className={styles.companyHeader}>
-                  <div className={`${styles.companyIcon} ${styles[caseStudy.color]}`}>
-                    <TrendingUp size={24} />
-                  </div>
-                  <div className={styles.companyInfo}>
-                    <h3 className={styles.companyName}>{caseStudy.company}</h3>
-                    <span className={styles.industry}>{caseStudy.industry}</span>
-                  </div>
+        <div className={styles.casesGrid}>
+          {caseStudies.map((caseStudy, index) => (
+            <div
+              key={caseStudy.id}
+              className={styles.caseCard}
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              <div className={styles.companyHeader}>
+                <div className={`${styles.companyIcon} ${styles[caseStudy.color]}`}>
+                  <TrendingUp size={24} />
                 </div>
-
-                {/* Solutions Used */}
-                <div className={styles.solutions}>
-                  <span className={styles.solutionsLabel}>Soluções utilizadas:</span>
-                  <div className={styles.solutionsTags}>
-                    {caseStudy.solutions.map((solution, index) => (
-                      <span key={index} className={styles.solutionTag}>
-                        {solution}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Metrics */}
-                <div className={styles.metrics}>
-                  <div className={styles.metric}>
-                    <span className={`${styles.metricValue} ${styles[caseStudy.color]}`}>
-                      {caseStudy.primaryMetric}
-                    </span>
-                    <span className={styles.metricLabel}>{caseStudy.primaryMetricLabel}</span>
-                  </div>
-                  <div className={styles.metricDivider} />
-                  <div className={styles.metric}>
-                    <span className={styles.metricValueSecondary}>
-                      {caseStudy.secondaryMetric}
-                    </span>
-                    <span className={styles.metricLabel}>{caseStudy.secondaryMetricLabel}</span>
-                  </div>
-                </div>
-
-                {/* Quote */}
-                <div className={styles.quote}>
-                  <Quote size={20} className={styles.quoteIcon} />
-                  <p className={styles.quoteText}>{caseStudy.quote}</p>
-                  <div className={styles.quoteAuthor}>
-                    <span className={styles.authorName}>{caseStudy.author}</span>
-                    <span className={styles.authorRole}>{caseStudy.role}</span>
-                  </div>
+                <div className={styles.companyInfo}>
+                  <h3 className={styles.companyName}>{caseStudy.company}</h3>
+                  <span className={styles.industry}>{caseStudy.industry}</span>
                 </div>
               </div>
-            </GlassCard>
+
+              <div className={styles.solutions}>
+                <span className={styles.solutionsLabel}>Soluções utilizadas:</span>
+                <div className={styles.solutionsTags}>
+                  {caseStudy.solutions.map((solution, i) => (
+                    <span key={i} className={styles.solutionTag}>{solution}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.metrics}>
+                <div className={styles.metric}>
+                  <span className={`${styles.metricValue} ${styles[caseStudy.color]}`}>
+                    {caseStudy.primaryMetric}
+                  </span>
+                  <span className={styles.metricLabel}>{caseStudy.primaryMetricLabel}</span>
+                </div>
+                <div className={styles.metricDivider} />
+                <div className={styles.metric}>
+                  <span className={styles.metricValueSecondary}>
+                    {caseStudy.secondaryMetric}
+                  </span>
+                  <span className={styles.metricLabel}>{caseStudy.secondaryMetricLabel}</span>
+                </div>
+              </div>
+
+              <div className={styles.quote}>
+                <Quote size={20} className={styles.quoteIcon} />
+                <p className={styles.quoteText}>{caseStudy.quote}</p>
+                <div className={styles.quoteAuthor}>
+                  <span className={styles.authorName}>{caseStudy.author}</span>
+                  <span className={styles.authorRole}>{caseStudy.role}</span>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* CTA */}
         <div className={styles.ctaWrapper}>
           <Link to="/cases" className={styles.ctaButton}>
             <span>Ver todos os cases</span>

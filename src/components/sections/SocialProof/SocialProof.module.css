@@ -1,22 +1,17 @@
-/* ============================================
-   SOCIAL PROOF STYLES
-   ============================================ */
-
 .socialProof {
-  padding: 48px 0;
-  background: var(--bg-secondary);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+  padding: 60px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .tagline {
   text-align: center;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--text-muted);
-  margin-bottom: 32px;
+  margin-bottom: 2.5rem;
 }
 
 .logosGrid {
@@ -24,7 +19,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
 }
 
 .logoCard {
@@ -32,17 +26,30 @@
   flex-direction: column;
   align-items: center;
   gap: 0.75rem;
-  padding: 1.5rem;
+  padding: 1.5rem 1.25rem;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.03);
-  transition: all 0.3s ease;
-  min-width: 140px;
+  min-width: 130px;
+  opacity: 0;
+  animation: fadeIn 0.5s ease forwards;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .logoCard:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.07);
   transform: translateY(-4px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .logoBadge {
@@ -57,25 +64,25 @@
 
 .logoInitial {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
 .logoName {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
   text-align: center;
   font-family: var(--font-mono);
+  line-height: 1.3;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-  .socialProof {
-    padding: 32px 0;
+  .logosGrid {
+    gap: 0.75rem;
   }
-
   .logoCard {
-    min-width: 120px;
+    min-width: 100px;
     padding: 1rem;
   }
 }
