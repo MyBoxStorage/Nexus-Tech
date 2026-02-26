@@ -39,7 +39,7 @@ function TheProblem() {
       gsap.from(cardsRef.current?.children || [], {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 70%',
+          start: 'top 95%',
           toggleActions: 'play none none reverse'
         },
         y: 50,
@@ -48,6 +48,7 @@ function TheProblem() {
         stagger: 0.15,
         ease: 'power3.out'
       })
+      ScrollTrigger.refresh()
     }, sectionRef)
 
     return () => ctx.revert()
@@ -65,7 +66,7 @@ function TheProblem() {
         </div>
 
         {/* Pain Points Grid */}
-        <div ref={cardsRef} className={styles.painPointsGrid}>
+        <div ref={cardsRef} className={styles.painPointsGrid} style={{ opacity: 1 }}>
           {painPoints.map((point, index) => (
             <GlassCard key={index} hoverable padding="large">
               <div className={styles.painPointCard}>

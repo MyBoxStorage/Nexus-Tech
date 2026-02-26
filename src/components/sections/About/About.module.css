@@ -3,7 +3,7 @@
    ============================================ */
 
 .about {
-  padding: 120px 0;
+  padding: 6rem 0;
   position: relative;
 }
 
@@ -12,7 +12,7 @@
   grid-template-columns: 1.2fr 1fr;
   gap: 64px;
   align-items: center;
-  margin-bottom: 80px;
+  margin-bottom: 48px;
 }
 
 /* Content */
@@ -70,9 +70,10 @@
 
 /* Stats Grid */
 .statsGrid {
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 2rem;
 }
 
 .statCard {
@@ -147,7 +148,7 @@
 
 @media (max-width: 768px) {
   .about {
-    padding: 80px 0;
+    padding: 4rem 0;
   }
   
   .statsGrid {

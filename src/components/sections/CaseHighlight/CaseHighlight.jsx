@@ -63,7 +63,7 @@ function CaseHighlight() {
       gsap.from(cardsRef.current?.children || [], {
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: 'top 70%',
+          start: 'top 95%',
           toggleActions: 'play none none reverse'
         },
         y: 50,
@@ -72,6 +72,7 @@ function CaseHighlight() {
         stagger: 0.15,
         ease: 'power3.out'
       })
+      ScrollTrigger.refresh()
     }, sectionRef)
 
     return () => ctx.revert()
@@ -89,7 +90,7 @@ function CaseHighlight() {
         </div>
 
         {/* Case Studies Grid */}
-        <div ref={cardsRef} className={styles.casesGrid}>
+        <div ref={cardsRef} className={styles.casesGrid} style={{ opacity: 1 }}>
           {caseStudies.map((caseStudy) => (
             <GlassCard key={caseStudy.id} hoverable padding="large">
               <div className={styles.caseCard}>

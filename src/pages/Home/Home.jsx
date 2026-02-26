@@ -13,12 +13,12 @@ function Home() {
   return (
     <div className={styles.home}>
       <Hero />
-      <SocialProof />
       <TheProblem />
       <ServicesHighlight />
       <HowItWorks />
       <Pricing />
       <CaseHighlight />
+      <SocialProof />
       <About />
       <Contact />
     </div>

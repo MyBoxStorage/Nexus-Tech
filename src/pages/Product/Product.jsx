@@ -6,6 +6,12 @@ import SectionBadge from '../../components/ui/SectionBadge/SectionBadge'
 import GlassCard from '../../components/ui/GlassCard/GlassCard'
 import styles from './Product.module.css'
 
+/** Brazilian format: 2997 → "2.997" */
+const formatPrice = (value) => {
+  if (value == null) return ''
+  return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+}
+
 // Product data - all 45 services
 const productsData = {
   'ia-atendimento-pro': {
@@ -381,7 +387,7 @@ function Product() {
               {price ? (
                 <>
                   <span className={styles.currency}>R$</span>
-                  <span className={styles.amount}>{price.toLocaleString('pt-BR')}</span>
+                  <span className={styles.amount}>{formatPrice(price)}</span>
                   <span className={styles.period}>/mês</span>
                 </>
               ) : (

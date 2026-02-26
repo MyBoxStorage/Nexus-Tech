@@ -7,6 +7,12 @@ import styles from './Pricing.module.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
+/** Brazilian format: 2997 → "2.997" (period as thousand separator, no decimals) */
+const formatPrice = (value) => {
+  if (value == null) return ''
+  return String(value).replace(/\B(?=(\d{3})+(?!\d))/g, '.')
+}
+
 const individualProducts = [
   {
     id: 'ia-atendimento-pro',
@@ -135,7 +141,7 @@ function PricingCard({ product, isAnnual, onViewDetails }) {
       
       <div className={styles.priceContainer}>
         <span className={styles.currency}>R$</span>
-        <span className={styles.price}>{price?.toLocaleString('pt-BR')}</span>
+        <span className={styles.price}>{formatPrice(price)}</span>
         <span className={styles.period}>/mês</span>
       </div>
       
@@ -205,7 +211,7 @@ function PackageCard({ package: pkg, isAnnual }) {
       ) : (
         <div className={styles.priceContainer}>
           <span className={styles.currency}>R$</span>
-          <span className={styles.price}>{price?.toLocaleString('pt-BR')}</span>
+          <span className={styles.price}>{formatPrice(price)}</span>
           <span className={styles.period}>/mês</span>
         </div>
       )}
