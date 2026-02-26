@@ -3,8 +3,9 @@
    ============================================ */
 
 .about {
-  padding: 6rem 0;
+  padding: 120px 0;
   position: relative;
+  overflow: visible;
   opacity: 1 !important;
 }
 
@@ -21,6 +22,8 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  overflow: visible;
+  opacity: 1 !important;
 }
 
 .title {

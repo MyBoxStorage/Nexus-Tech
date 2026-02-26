@@ -22,12 +22,15 @@
 }
 
 .bottomRow {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 24px;
-  max-width: calc((1100px / 3 * 2) + 24px);
-  margin: 0 auto;
   margin-top: 24px;
+}
+
+.bottomRow > * {
+  flex: 0 0 calc((100% - 24px) / 3);
+  max-width: calc((100% - 24px) / 3);
 }
 
 .card {
@@ -111,7 +114,11 @@
     grid-template-columns: 1fr 1fr;
   }
   .bottomRow {
-    max-width: 100%;
+    flex-wrap: wrap;
+  }
+  .bottomRow > * {
+    flex: 0 0 calc(50% - 12px);
+    max-width: calc(50% - 12px);
   }
 }
 
@@ -122,7 +129,8 @@
   .grid {
     grid-template-columns: 1fr;
   }
-  .bottomRow {
-    grid-template-columns: 1fr;
+  .bottomRow > * {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
