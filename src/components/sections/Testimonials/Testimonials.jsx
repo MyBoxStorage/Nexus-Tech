@@ -45,7 +45,38 @@ const testimonials = [
   }
 ]
 
+function TestimonialCard({ t, index }) {
+  return (
+    <div
+      className={styles.card}
+      style={{ animationDelay: `${index * 0.12}s` }}
+    >
+      <div className={styles.stars}>
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} size={14} className={styles.star} />
+        ))}
+      </div>
+      <p className={styles.text}>"{t.text}"</p>
+      <div className={styles.author}>
+        <div
+          className={styles.avatar}
+          style={{ background: `${t.color}25`, borderColor: `${t.color}40` }}
+        >
+          <span style={{ color: t.color }}>{t.initials}</span>
+        </div>
+        <div className={styles.authorInfo}>
+          <span className={styles.authorName}>{t.name}</span>
+          <span className={styles.authorRole}>{t.role} · {t.company}</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function Testimonials() {
+  const firstRow = testimonials.slice(0, 3)
+  const secondRow = testimonials.slice(3, 5)
+
   return (
     <section className={styles.testimonials}>
       <div className="container">
@@ -55,33 +86,13 @@ function Testimonials() {
         </div>
 
         <div className={styles.grid}>
-          {testimonials.map((t, index) => (
-            <div
-              key={index}
-              className={styles.card}
-              style={{ animationDelay: `${index * 0.12}s` }}
-            >
-              <div className={styles.stars}>
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className={styles.star} />
-                ))}
-              </div>
-
-              <p className={styles.text}>"{t.text}"</p>
-
-              <div className={styles.author}>
-                <div
-                  className={styles.avatar}
-                  style={{ background: `${t.color}25`, borderColor: `${t.color}40` }}
-                >
-                  <span style={{ color: t.color }}>{t.initials}</span>
-                </div>
-                <div className={styles.authorInfo}>
-                  <span className={styles.authorName}>{t.name}</span>
-                  <span className={styles.authorRole}>{t.role} · {t.company}</span>
-                </div>
-              </div>
-            </div>
+          {firstRow.map((t, index) => (
+            <TestimonialCard key={index} t={t} index={index} />
+          ))}
+        </div>
+        <div className={styles.bottomRow}>
+          {secondRow.map((t, index) => (
+            <TestimonialCard key={index + 3} t={t} index={index + 3} />
           ))}
         </div>
       </div>

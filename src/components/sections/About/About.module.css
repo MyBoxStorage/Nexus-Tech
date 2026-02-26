@@ -77,10 +77,14 @@
   margin-top: 3rem;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
 }
 
 .statItem {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 .statCard {
@@ -121,13 +125,14 @@
   color: var(--accent-blue);
   line-height: 1;
   display: block;
+  white-space: nowrap;
 }
 
 .statLabel {
   font-size: 0.875rem;
   color: var(--text-muted);
-  margin-top: 0.5rem;
   display: block;
+  text-align: center;
 }
 
 /* Responsive */
