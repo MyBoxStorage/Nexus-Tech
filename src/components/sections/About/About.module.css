@@ -5,6 +5,7 @@
 .about {
   padding: 6rem 0;
   position: relative;
+  opacity: 1 !important;
 }
 
 .aboutGrid {
@@ -70,10 +71,16 @@
 
 /* Stats Grid */
 .statsGrid {
-  margin-top: 3rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statItem {
+  text-align: center;
 }
 
 .statCard {
@@ -107,18 +114,20 @@
   color: white;
 }
 
-.statValue {
+.statNumber {
   font-family: var(--font-display);
-  font-size: 2.5rem;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
   font-weight: 800;
-  color: var(--text-primary);
+  color: var(--accent-blue);
   line-height: 1;
-  margin-bottom: 8px;
+  display: block;
 }
 
 .statLabel {
-  font-size: 14px;
-  color: var(--text-secondary);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  display: block;
 }
 
 /* Responsive */
@@ -159,7 +168,7 @@
     padding: 24px;
   }
   
-  .statValue {
+  .statNumber {
     font-size: 2rem;
   }
 }

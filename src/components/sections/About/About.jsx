@@ -152,8 +152,10 @@ function About() {
               <div className={styles.statIcon}>
                 <stat.icon size={24} />
               </div>
-              <span className={styles.statValue}>{stat.value}</span>
-              <span className={styles.statLabel}>{stat.label}</span>
+              <div className={styles.statItem}>
+                <span className={styles.statNumber}>{stat.value}</span>
+                <span className={styles.statLabel}>{stat.label}</span>
+              </div>
             </div>
           ))}
         </div>

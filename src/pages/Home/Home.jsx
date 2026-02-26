@@ -5,6 +5,7 @@ import ServicesHighlight from '../../components/sections/ServicesHighlight/Servi
 import HowItWorks from '../../components/sections/HowItWorks/HowItWorks'
 import Pricing from '../../components/sections/Pricing/Pricing'
 import CaseHighlight from '../../components/sections/CaseHighlight/CaseHighlight'
+import Testimonials from '../../components/sections/Testimonials/Testimonials'
 import About from '../../components/sections/About/About'
 import Contact from '../../components/sections/Contact/Contact'
 import styles from './Home.module.css'
@@ -18,6 +19,7 @@ function Home() {
       <HowItWorks />
       <Pricing />
       <CaseHighlight />
+      <Testimonials />
       <SocialProof />
       <About />
       <Contact />

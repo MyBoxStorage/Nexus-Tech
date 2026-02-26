@@ -5,6 +5,7 @@
 .servicesHighlight {
   padding: 120px 0;
   position: relative;
+  opacity: 1 !important;
 }
 
 .header {
