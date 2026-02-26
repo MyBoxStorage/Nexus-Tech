@@ -1,0 +1,475 @@
+/* ============================================
+   CASES PAGE STYLES
+   ============================================ */
+
+.casesPage {
+  padding-top: 80px;
+}
+
+/* Hero */
+.hero {
+  padding: 80px 0;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  margin-top: 20px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--text-primary);
+}
+
+.statsRow {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 48px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+  line-height: 1;
+}
+
+.statLabel {
+  margin-top: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* Problems Section */
+.problemsSection {
+  padding: 80px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  color: var(--text-primary);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.problemsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.problemCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.problemNumber {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+  opacity: 0.2;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+
+.problemTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.problemDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.painPointsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.painPoint {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.painIcon {
+  flex-shrink: 0;
+  color: #EF4444;
+  margin-top: 2px;
+}
+
+/* Case Studies Section */
+.caseStudiesSection {
+  padding: 80px 0;
+}
+
+.caseStudiesList {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.caseStudy {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* Case Header */
+.caseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.caseCompany {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.companyIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--gradient-blue);
+  border-radius: var(--radius-md);
+  color: white;
+}
+
+.companyName {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.industry {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.solutions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.solutionTag {
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-blue);
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.solutionTag:hover {
+  background: var(--accent-blue);
+  color: white;
+}
+
+/* Case Content */
+.caseContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+}
+
+.caseDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.detailBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.detailTitle {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.detailText {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Metrics Grid */
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.metricCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+}
+
+.metricValue {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-blue);
+  line-height: 1;
+}
+
+.metricLabel {
+  margin-top: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+/* Case Quote */
+.caseQuote {
+  padding: 24px;
+  background: var(--glass-surface);
+  border-radius: var(--radius-md);
+}
+
+.quoteIcon {
+  color: var(--accent-blue);
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+
+.quoteText {
+  font-size: 16px;
+  line-height: 1.7;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.quoteAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.authorName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.authorRole {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* Before/After */
+.beforeAfter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-color);
+}
+
+.beforeAfterColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.beforeAfterTitle {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.beforeAfterList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.beforeAfterList li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.beforeItem {
+  color: #EF4444;
+}
+
+.afterItem {
+  color: var(--accent-green);
+}
+
+/* Bottom CTA */
+.bottomCta {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+}
+
+.ctaContent {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.ctaText {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: var(--gradient-blue);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.primaryCta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.secondaryCta:hover {
+  border-color: var(--accent-blue);
+  color: var(--accent-blue);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .statsRow {
+    gap: 32px;
+  }
+  
+  .problemsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .caseContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .caseHeader {
+    flex-direction: column;
+  }
+  
+  .beforeAfter {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .casesPage {
+    padding-top: 72px;
+  }
+  
+  .hero {
+    padding: 48px 0;
+  }
+  
+  .statsRow {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .statValue {
+    font-size: 2rem;
+  }
+  
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .ctaButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .primaryCta,
+  .secondaryCta {
+    justify-content: center;
+  }
+}

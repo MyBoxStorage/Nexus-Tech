@@ -1,0 +1,545 @@
+/* ============================================
+   PRICING STYLES
+   ============================================ */
+
+.pricing {
+  padding: 120px 0;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--text-primary);
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-size: 16px;
+  color: var(--text-secondary);
+}
+
+/* Toggle */
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.toggleButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--glass-surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.toggleButton:hover {
+  background: var(--bg-card);
+}
+
+.toggleButton.active {
+  background: var(--gradient-blue);
+  border-color: transparent;
+  color: white;
+}
+
+.discountBadge {
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--accent-green);
+  border-radius: var(--radius-full);
+}
+
+/* Section Label */
+.sectionLabel {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  padding-left: 8px;
+}
+
+/* Carousel */
+.carouselContainer {
+  position: relative;
+  margin-bottom: 64px;
+}
+
+.pricingCarousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 16px 8px;
+  margin: -16px -8px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.pricingCarousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  color: var(--text-primary);
+  z-index: 10;
+  transition: all var(--transition-base);
+}
+
+.carouselArrow:hover {
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  color: white;
+}
+
+.arrowLeft {
+  left: -22px;
+}
+
+.arrowRight {
+  right: -22px;
+}
+
+/* Pricing Card */
+.pricingCard {
+  flex: 0 0 320px;
+  scroll-snap-align: start;
+  position: relative;
+  padding: 32px;
+  background: var(--glass-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.pricingCard:hover {
+  border-color: var(--accent-blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.badge {
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  padding: 4px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+}
+
+.popularBadge {
+  background: var(--gradient-blue);
+  color: white;
+}
+
+.productName {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  margin-top: 8px;
+}
+
+.productDescription {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+  min-height: 60px;
+}
+
+.priceContainer {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+
+.currency {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.price {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1;
+}
+
+.period {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.annualSavings {
+  display: block;
+  font-size: 12px;
+  color: var(--accent-green);
+  margin-bottom: 20px;
+}
+
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  color: var(--accent-green);
+  margin-top: 2px;
+}
+
+.cardActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.primaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  background: var(--gradient-blue);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.primaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.secondaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px 24px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.secondaryButton:hover {
+  color: var(--accent-blue);
+  border-color: var(--accent-blue);
+}
+
+/* Packages Grid */
+.packagesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.packageCard {
+  position: relative;
+  padding: 32px;
+  background: var(--glass-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.packageCard:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.packageCard.highlighted {
+  border-color: var(--accent-purple);
+  box-shadow: var(--shadow-glow-purple);
+}
+
+.savingsBadge {
+  background: var(--accent-green);
+  color: white;
+}
+
+.bestValueBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--gradient-purple);
+  color: white;
+}
+
+.packageName {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  margin-top: 8px;
+}
+
+.includesSection {
+  margin-bottom: 24px;
+}
+
+.includesLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.includesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.includeItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.enterprisePrice {
+  margin-bottom: 24px;
+}
+
+.enterpriseLabel {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-purple);
+}
+
+.highlightedButton {
+  background: var(--gradient-purple);
+}
+
+.highlightedButton:hover {
+  box-shadow: var(--shadow-glow-purple);
+}
+
+/* Modal */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 40px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+}
+
+.modalClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 8px;
+  color: var(--text-muted);
+  background: var(--glass-surface);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.modalClose:hover {
+  color: var(--text-primary);
+  background: var(--bg-card);
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.modalDescription {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.modalSection {
+  margin-bottom: 32px;
+}
+
+.modalSectionTitle {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.modalFeatures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.modalFeatureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.specsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.specItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: var(--glass-surface);
+  border-radius: var(--radius-md);
+}
+
+.specLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.specValue {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.modalActions {
+  margin-top: 32px;
+}
+
+.modalPrimaryButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: var(--gradient-blue);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.modalPrimaryButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .carouselArrow {
+    display: none;
+  }
+  
+  .packagesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .pricing {
+    padding: 80px 0;
+  }
+  
+  .pricingCard {
+    flex: 0 0 280px;
+    padding: 24px;
+  }
+  
+  .packageCard {
+    padding: 24px;
+  }
+  
+  .modalContent {
+    padding: 24px;
+  }
+  
+  .modalFeatures,
+  .specsGrid {
+    grid-template-columns: 1fr;
+  }
+}

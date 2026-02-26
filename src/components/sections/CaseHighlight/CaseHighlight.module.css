@@ -1,0 +1,263 @@
+/* ============================================
+   CASE HIGHLIGHT STYLES
+   ============================================ */
+
+.caseHighlight {
+  padding: 120px 0;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--text-primary);
+}
+
+/* Cases Grid */
+.casesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Case Card */
+.caseCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Company Header */
+.companyHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.companyIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+}
+
+.companyIcon.blue {
+  background: rgba(37, 99, 235, 0.15);
+  color: var(--accent-blue);
+}
+
+.companyIcon.purple {
+  background: rgba(124, 58, 237, 0.15);
+  color: var(--accent-purple);
+}
+
+.companyInfo {
+  flex: 1;
+}
+
+.companyName {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.industry {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Solutions */
+.solutions {
+  margin-bottom: 24px;
+}
+
+.solutionsLabel {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.solutionsTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.solutionTag {
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--accent-blue);
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: var(--radius-full);
+}
+
+/* Metrics */
+.metrics {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 20px;
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.metric {
+  flex: 1;
+  text-align: center;
+}
+
+.metricValue {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.metricValue.blue {
+  color: var(--accent-blue);
+}
+
+.metricValue.purple {
+  color: var(--accent-purple);
+}
+
+.metricValueSecondary {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.metricLabel {
+  display: block;
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.metricDivider {
+  width: 1px;
+  height: 50px;
+  background: var(--border-color);
+}
+
+/* Quote */
+.quote {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--glass-surface);
+  border-radius: var(--radius-md);
+}
+
+.quoteIcon {
+  color: var(--accent-blue);
+  opacity: 0.5;
+  margin-bottom: 12px;
+}
+
+.quoteText {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.7;
+  font-style: italic;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.quoteAuthor {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.authorName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.authorRole {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* CTA */
+.ctaWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  background: var(--gradient-blue);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .casesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .caseCard {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .caseHighlight {
+    padding: 80px 0;
+  }
+  
+  .metrics {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .metricDivider {
+    width: 100%;
+    height: 1px;
+  }
+  
+  .metricValue {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,180 @@
+/* ============================================
+   HOW IT WORKS STYLES
+   ============================================ */
+
+.howItWorks {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--text-primary);
+}
+
+/* Steps Container */
+.stepsContainer {
+  position: relative;
+}
+
+.connectingLine {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  width: 75%;
+  margin: 0 auto;
+  opacity: 0.5;
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Step Card */
+.step {
+  position: relative;
+  text-align: center;
+}
+
+.bgNumber {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-size: 120px;
+  font-weight: 800;
+  color: var(--accent-blue);
+  opacity: 0.05;
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.stepContent {
+  position: relative;
+  z-index: 1;
+  padding: 32px 24px;
+  background: var(--glass-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+.step:hover .stepContent {
+  border-color: var(--accent-blue);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 20px;
+  background: var(--gradient-blue);
+  border-radius: var(--radius-full);
+  color: white;
+}
+
+.stepNumber {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-blue);
+  margin-bottom: 8px;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.stepDescription {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* Connector */
+.connector {
+  position: absolute;
+  top: 28px;
+  right: -24px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.connectorDot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .connectingLine {
+    display: none;
+  }
+  
+  .stepsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 32px;
+  }
+  
+  .connector {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .howItWorks {
+    padding: 80px 0;
+  }
+  
+  .header {
+    margin-bottom: 48px;
+  }
+  
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  
+  .bgNumber {
+    font-size: 80px;
+    top: -20px;
+  }
+  
+  .stepContent {
+    padding: 24px;
+  }
+}

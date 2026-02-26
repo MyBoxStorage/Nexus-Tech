@@ -1,0 +1,47 @@
+/* ============================================
+   GLASS CARD STYLES
+   ============================================ */
+
+.glassCard {
+  background: var(--glass-surface);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-base);
+}
+
+/* Padding variants - standalone for CSS Modules */
+.small {
+  padding: 1rem;
+}
+
+.medium {
+  padding: 1.5rem;
+}
+
+.large {
+  padding: 2rem;
+}
+
+/* Hoverable variant */
+.hoverable {
+  cursor: pointer;
+}
+
+.hoverable:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-card);
+}
+
+/* Glow on hover variant */
+.glowOnHover:hover {
+  box-shadow: var(--shadow-glow-blue);
+}
+
+/* Focus state */
+.glassCard:focus-visible {
+  outline: 2px solid var(--accent-blue);
+  outline-offset: 2px;
+}

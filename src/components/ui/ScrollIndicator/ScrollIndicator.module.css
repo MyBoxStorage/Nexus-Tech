@@ -1,0 +1,46 @@
+/* ============================================
+   SCROLL INDICATOR STYLES
+   ============================================ */
+
+.scrollIndicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  color: var(--text-muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.scrollIndicator:hover {
+  color: var(--accent-blue);
+}
+
+.scrollIndicator:hover .icon {
+  transform: translateY(4px);
+}
+
+.text {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.icon {
+  transition: transform var(--transition-base);
+}
+
+/* Keyframes */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}

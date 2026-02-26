@@ -1,0 +1,90 @@
+/* ============================================
+   CIRCUIT BACKGROUND STYLES
+   ============================================ */
+
+.circuitBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.circuitSvg {
+  width: 100%;
+  height: 100%;
+  opacity: var(--circuit-opacity);
+  transition: opacity var(--transition-base);
+}
+
+/* Energy pulse animation for circuit paths */
+.energyPulse {
+  stroke-dasharray: 20 200 40 100 60 300;
+  stroke-dashoffset: 1000;
+  animation: energy-flow 4s linear infinite;
+  will-change: stroke-dashoffset;
+}
+
+@keyframes energy-flow {
+  0% {
+    stroke-dashoffset: 1000;
+    opacity: 0.3;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.3;
+  }
+}
+
+/* Glowing nodes animation */
+.glowingNodes circle {
+  will-change: opacity;
+}
+
+/* Overlay for text readability */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 0%,
+    var(--bg-primary) 70%
+  );
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .circuitSvg {
+    opacity: calc(var(--circuit-opacity) * 0.5);
+  }
+  
+  .energyPulse {
+    animation-duration: 6s;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .energyPulse {
+    animation: none;
+    stroke-dashoffset: 0;
+    opacity: 0.5;
+  }
+  
+  .glowingNodes circle animate {
+    animation: none;
+  }
+}
