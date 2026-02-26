@@ -4,9 +4,13 @@
 
 .about {
   padding: 120px 0;
-  position: relative;
   overflow: visible;
   opacity: 1 !important;
+  position: relative;
+}
+
+.about * {
+  overflow: visible;
 }
 
 .aboutGrid {
@@ -15,6 +19,7 @@
   gap: 64px;
   align-items: center;
   margin-bottom: 48px;
+  overflow: visible;
 }
 
 /* Content */

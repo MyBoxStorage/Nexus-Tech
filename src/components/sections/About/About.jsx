@@ -32,33 +32,37 @@ function About() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Content animation
-      gsap.from(contentRef.current?.children || [], {
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 70%',
-          toggleActions: 'play none none reverse'
-        },
-        x: -40,
-        opacity: 0,
-        duration: 0.7,
-        stagger: 0.15,
-        ease: 'power3.out'
-      })
+      // Animate content children with y only, never x
+      if (contentRef.current?.children) {
+        gsap.from(contentRef.current.children, {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          y: 30,
+          opacity: 0,
+          duration: 0.7,
+          stagger: 0.15,
+          ease: 'power3.out'
+        })
+      }
 
-      // Stats animation
-      gsap.from(statsRef.current?.children || [], {
-        scrollTrigger: {
-          trigger: statsRef.current,
-          start: 'top 85%',
-          toggleActions: 'play none none reverse'
-        },
-        y: 30,
-        opacity: 0,
-        duration: 0.6,
-        stagger: 0.1,
-        ease: 'power2.out'
-      })
+      // Animate stats children
+      if (statsRef.current?.children) {
+        gsap.from(statsRef.current.children, {
+          scrollTrigger: {
+            trigger: statsRef.current,
+            start: 'top 90%',
+            toggleActions: 'play none none none'
+          },
+          y: 20,
+          opacity: 0,
+          duration: 0.5,
+          stagger: 0.1,
+          ease: 'power2.out'
+        })
+      }
     }, sectionRef)
 
     return () => ctx.revert()
